@@ -1,0 +1,55 @@
+info:
+  name: atualizar
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://localhost:8080/aula
+  headers:
+    - name: Content-Type
+      value: text/xml; charset=utf-8
+  body:
+    type: xml
+    data: "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.fiap.com.br/\">\r
+
+      \    <soapenv:Header/>\r
+
+      \    <soapenv:Body>\r
+
+      \        <ser:atualizar>\r
+
+      \            <aula>\r
+
+      \                <id>1</id>\r
+
+      \                <diaDaSemana>SEGUNDA</diaDaSemana>\r
+
+      \                <disciplina>ARQUITETURA ORIENTADA A SERVIÇOS (SOA) E WEB SERVICES</disciplina>\r
+
+      \                <horarioFim>21:00</horarioFim>\r
+
+      \                <horarioInicio>19:20</horarioInicio>\r
+
+      \                <professor>SALATIEL LUZ MARINHO</professor>\r
+
+      \                <sala>105</sala>\r
+
+      \                <status>CANCELADA</status>\r
+
+      \                <tipo>PRESENCIAL</tipo>\r
+
+      \            </aula>\r
+
+      \        </ser:atualizar>\r
+
+      \    </soapenv:Body>\r
+
+      </soapenv:Envelope>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

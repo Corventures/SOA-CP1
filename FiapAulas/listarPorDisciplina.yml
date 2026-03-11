@@ -1,0 +1,29 @@
+info:
+  name: listarPorDisciplina
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8080/aula
+  headers:
+    - name: Content-Type
+      value: text/xml; charset=utf-8
+  body:
+    type: xml
+    data: |-
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.fiap.com.br/">
+          <soapenv:Header/>
+          <soapenv:Body>
+              <ser:listarPorDisciplina>
+                  <disciplina>SOA</disciplina>
+              </ser:listarPorDisciplina>
+          </soapenv:Body>
+      </soapenv:Envelope>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

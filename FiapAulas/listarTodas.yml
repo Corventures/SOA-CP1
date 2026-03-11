@@ -1,0 +1,31 @@
+info:
+  name: listarTodas
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/aula
+  headers:
+    - name: Content-Type
+      value: text/xml; charset=utf-8
+  body:
+    type: xml
+    data: "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.fiap.com.br/\">\r
+
+      \    <soapenv:Header/>\r
+
+      \    <soapenv:Body>\r
+
+      \        <ser:listarTodas/>\r
+
+      \    </soapenv:Body>\r
+
+      </soapenv:Envelope>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,35 @@
+info:
+  name: buscarPorId
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://localhost:8080/aula
+  headers:
+    - name: Content-Type
+      value: text/xml; charset=utf-8
+  body:
+    type: xml
+    data: "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ser=\"http://service.fiap.com.br/\">\r
+
+      \    <soapenv:Header/>\r
+
+      \    <soapenv:Body>\r
+
+      \        <ser:buscarPorId>\r
+
+      \            <id>1</id>\r
+
+      \        </ser:buscarPorId>\r
+
+      \    </soapenv:Body>\r
+
+      </soapenv:Envelope>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
