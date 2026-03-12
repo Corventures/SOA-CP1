@@ -19,7 +19,7 @@ public class AulaService implements IAulaService {
         private final AtomicInteger idGenerator = new AtomicInteger(0);
 
         public AulaService() {
-                popularAulasIniciais();
+                // popularAulasIniciais();
         }
 
         @Override
