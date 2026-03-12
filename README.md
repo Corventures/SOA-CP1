@@ -8,17 +8,16 @@ Este é um projeto universitário (FIAP) de um **Web Service SOAP** desenvolvido
 - **Tecnologia/Protocolo:** JAX-WS (Web Services SOAP)
 - **WSDL:** `http://localhost:8080/aula?wsdl`
 
-## ⚙️ Funcionalidades (Operações SOAP)
 
-A interface `IAulaService` (_Endpoint Interface_) expõe as seguintes operações web (`@WebMethod`):
+## ⚙️ Operações SOAP (`IAulaService`)
 
-- `listarTodas()`: Retorna a lista contendo todas as aulas cadastradas no sistema.
-- `buscarPorId(Long id)`: Busca os detalhes de uma aula passando o seu ID único.
-- `listarPorDia(DiaDaSemana dia)`: Filtra iterativamente as aulas pelo dia da semana (ex: `SEGUNDA`, `QUARTA`).
-- `listarPorDisciplina(String disciplina)`: Efetua uma busca parcial de aulas pelo nome da disciplina.
-- `cadastrar(Aula aula)`: Registra uma nova aula, gerando um ID incremental automático.
-- `atualizar(Aula aula)`: Sobrescreve e atualiza os dados completos de uma aula já existente.
-- `excluir(Long id)`: Remove do sistema uma aula a partir do seu ID.
+* **`listarTodas()`**: Retorna todas as aulas registradas.
+* **`buscarPorId(id)`**: Busca uma aula pelo ID
+* **`listarPorDia(dia)`**: Filtra as aulas conforme o dia da semana.
+* **`listarPorDisciplina(nome)`**: Busca aulas por nome (suporta termos parciais).
+* **`cadastrar(aula)`**: Registra uma nova aula com ID incremental.
+* **`atualizar(aula)`**: Atualiza integralmente os dados de uma aula existente.
+* **`excluir(id)`**: Remove uma aula pelo ID.
 
 ## 🏗️ Estrutura e Camadas
 
