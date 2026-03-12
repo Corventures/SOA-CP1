@@ -21,11 +21,11 @@ Este é um projeto universitário (FIAP) de um **Web Service SOAP** desenvolvido
 
 ## 🏗️ Estrutura e Camadas
 
-- **`br.com.fiap.application.Publicador`**: Classe executável (Provider) responsável por levantar o servidor web embutido usando `Endpoint.publish` no endereço `http://localhost:8080/aula`.
-- **`br.com.fiap.Main`**: Classe responsável por simular o Cliente/Consumidor do serviço SOAP usando `Service.create(url, qname)`. Conecta-se ao WSDL, executa o fluxo completo (CRUD) no console com saída bem formatada visualmente.
-- **`br.com.fiap.service.*`**: Interfaces e serviço centralizado expondo seus métodos (`@WebService`). O banco de dados no momento é figurado em memória por um `List<Aula>` e ID Generator (`AtomicInteger`).
-- **`br.com.fiap.dto.Aula`**: Representação/Entidade transferida dos dados entre cliente e servidor com campos como Disciplina, Professor, Sala, Dia, e Horários.
-- **`br.com.fiap.enums.*`**: Enumeradores para tipagem da aula (`PRESENCIAL`, `REMOTO`), os dias da semana e os status das aulas (`CONFIRMADA`, `CANCELADA`, etc).
+* **`application.Publicador`**: Provedor do serviço; publica o endpoint SOAP em `http://localhost:8080/aula`.
+* **`Main`**: Cliente consumidor; simula o fluxo CRUD e interage com o WSDL do serviço.
+* **`service`**: Camada de negócio e interface `@WebService`; gerencia dados em memória (`List` e `AtomicInteger`).
+* **`dto.Aula`**: Objeto de transferência (DTO); define os campos da entidade (Disciplina, Professor, Sala, etc).
+* **`enums`**: Tipagens constantes; define modalidades (Presencial/Remoto), dias da semana e status da aula.
 
 ## ▶️ Como Executar
 
