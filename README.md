@@ -32,21 +32,30 @@ A interface `IAulaService` (_Endpoint Interface_) expõe as seguintes operaçõe
 
 ### 1. Iniciando o Servidor (Provider)
 
-Dentro de sua IDE, execute a classe principal `br.com.fiap.application.Publicador`.
-Ela fará a subida do servidor SOAP. Você verá a mensagem de sucesso no seu console:
+Execute a classe principal `br.com.fiap.application.Publicador`. Ela levantará o servidor SOAP localmente. Você verá a seguinte confirmação no console:
 
 ```text
 Web Service publicado!
+
 ```
 
-_Opcional: Você pode acessar e validar a geração do WSDL abrindo no navegador: `http://localhost:8080/aula?wsdl`_
+> **Dica:** Para testar com dados pré-existentes, descomente a linha `// popularAulasIniciais();` no construtor da classe `AulaService`.
 
-> **Nota:** Descomente o // popularAulasIniciais(); dentro do construtor padrão de `AulaService` para já iniciar o servidor com as aulas do 3ESPX cadastradas, facilitando os testes de leitura e atualização.
+---
 
-### 2. Executando o Cliente (Consumer)
+### 2. Documentação da API (Bruno Docs) 📖
 
-Com o servidor rodando em background, execute a classe principal `br.com.fiap.Main`.
-A classe criará uma série de mockups, cadastrará aulas novas, fará uma busca listando todas, outra filtrando pelo Dia da Semana, alterará informações de uma das aulas postadas, e deletará um modelo teste, imprimindo no console:
+Para facilitar o entendimento dos contratos XML e visualizar os exemplos de cada operação, acesse a documentação interativa gerada pelo **Bruno** que está hospedada em:
+
+👉 **[corventures.github.io/SOA-CP1/](https://corventures.github.io/SOA-CP1/)**
+
+Nesta página, você encontrará os detalhes de entrada e saída para cada endpoint (`listarTodas`, `cadastrar`, `atualizar`, etc.), servindo como um guia de referência rápido para os testes.
+
+---
+
+### 3. Executando o Cliente Java (Consumer)
+
+Com o servidor rodando, execute a classe `br.com.fiap.Main` para validar o fluxo CRUD completo via código. O console exibirá os logs das operações:
 
 ```text
 Conexão estabelecida com sucesso!
@@ -55,11 +64,6 @@ Conexão estabelecida com sucesso!
            Testando Cadastro
 ========================================
 Aulas cadastradas com sucesso! IDs gerados: 1 e 2
-
-(...)
-
-Total de aulas: 2
-Aula [ID: 1] - Arquitetura Orientada a Serviços (SOA)
-  ├─ Prof/Local: Salatiel Luz Marinho | Sala: 105
 ...
+
 ```
